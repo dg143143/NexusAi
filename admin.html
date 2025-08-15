@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - SmartSignal Pro</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="header">
+                <h1>SmartSignal Pro</h1>
+                <h2>Admin Access</h2>
+            </div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit">Authenticate</button>
+                <p id="error-message" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Hardcoded credentials for demonstration
+            if (username === 'admin' && password === 'admin123') {
+                errorMessage.textContent = '';
+                // Store login state
+                localStorage.setItem('isAdminLoggedIn', 'true');
+                window.location.href = 'admin_dashboard.html';
+            } else {
+                errorMessage.textContent = 'Invalid credentials. Please try again.';
+            }
+        });
+    </script>
+</body>
+</html>
