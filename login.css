@@ -1,0 +1,143 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0a0a12;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.login-form {
+    background: rgba(13, 27, 42, 0.85);
+    padding: 40px 50px;
+    border-radius: 15px;
+    border: 1px solid #00a86b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    width: 360px;
+}
+
+.header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00d084;
+    font-size: 3em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.glow {
+    text-shadow: 0 0 5px #00d084, 0 0 10px #00d084, 0 0 20px #00a86b, 0 0 30px #00a86b;
+    animation: glow-animation 1.5s infinite alternate;
+}
+
+@keyframes glow-animation {
+    from { text-shadow: 0 0 5px #00d084, 0 0 10px #00d084; }
+    to { text-shadow: 0 0 20px #00d084, 0 0 30px #00a86b; }
+}
+
+.header p {
+    color: #64b5f6;
+    font-size: 1.1em;
+    margin: 0 0 40px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #64b5f6;
+    color: #fff;
+    font-size: 1.1em;
+    outline: none;
+}
+
+.input-field label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #64b5f6;
+    font-size: 1.1em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-field input:focus + label,
+.input-field input:placeholder-shown + label {
+    /* This will keep the label up if there's a placeholder, which we get with " " */
+}
+
+.input-field input:not(:placeholder-shown) + label,
+.input-field input:focus + label {
+    top: -15px;
+    left: 0;
+    font-size: 0.9em;
+    color: #00d084;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #00a86b;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(0, 168, 107, 0.4);
+}
+
+.login-button:hover {
+    background: #00c88b;
+    box-shadow: 0 0 25px rgba(0, 200, 139, 0.7);
+    transform: translateY(-3px);
+}
+
+.login-button.success {
+    background: #28a745;
+    box-shadow: 0 0 25px #28a745;
+}
+
+.error-text {
+    color: #ff5252;
+    margin-top: 15px;
+    height: 20px;
+}
+
+.login-form.shake {
+    animation: shake-animation 0.5s;
+}
+
+@keyframes shake-animation {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}

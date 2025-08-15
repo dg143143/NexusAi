@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SmartSignal Pro</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Courier+New&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <div class="header-buttons">
+                <a href="app.html" class="nav-button">Go to App</a>
+                <button id="logoutButton" class="nav-button">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="card create-user-card">
+                <h2>Create New User</h2>
+                <form id="createUserForm">
+                    <div class="form-grid">
+                        <input type="text" id="newUsername" placeholder="Username" required>
+                        <input type="email" id="newUserEmail" placeholder="Email Address" required>
+                        <select id="newUserStatus">
+                            <option value="approved">Approved</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                        <button type="submit">Create User</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card user-list-card">
+                <h2>User Management</h2>
+                <div class="user-list-header">
+                    <span>Username</span>
+                    <span>Email</span>
+                    <span>Status</span>
+                    <span>Actions</span>
+                </div>
+                <ul id="userList" class="user-list">
+                    <!-- User items will be injected here by JavaScript -->
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>
