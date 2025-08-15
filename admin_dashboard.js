@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Authentication Check ---
     if (localStorage.getItem('isAdminLoggedIn') !== 'true') {
-        window.location.href = 'admin.html';
+        window.location.href = 'index.html';
         return; // Stop script execution if not logged in
     }
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logout
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('isAdminLoggedIn');
-        window.location.href = 'admin.html';
+        window.location.href = 'index.html';
     });
 
     // --- Action Functions ---
